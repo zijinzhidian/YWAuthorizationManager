@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18C267C01F47F49400E0A882 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C267BF1F47F49400E0A882 /* main.m */; };
+		18C267C31F47F49400E0A882 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C267C21F47F49400E0A882 /* AppDelegate.m */; };
+		18C267C61F47F49400E0A882 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C267C51F47F49400E0A882 /* ViewController.m */; };
+		18C267C91F47F49400E0A882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C267C71F47F49400E0A882 /* Main.storyboard */; };
+		18C267CB1F47F49400E0A882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C267CA1F47F49400E0A882 /* Assets.xcassets */; };
+		18C267CE1F47F49400E0A882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C267CC1F47F49400E0A882 /* LaunchScreen.storyboard */; };
+		18C267D91F47F49400E0A882 /* YWAuthorizationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C267D81F47F49400E0A882 /* YWAuthorizationManagerTests.m */; };
+		18C267E41F47F49400E0A882 /* YWAuthorizationManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C267E31F47F49400E0A882 /* YWAuthorizationManagerUITests.m */; };
+		18C267F31F47F4CA00E0A882 /* YWAuthorizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C267F21F47F4CA00E0A882 /* YWAuthorizationManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18C267D51F47F49400E0A882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18C267B31F47F49400E0A882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C267BA1F47F49400E0A882;
+			remoteInfo = YWAuthorizationManager;
+		};
+		18C267E01F47F49400E0A882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18C267B31F47F49400E0A882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C267BA1F47F49400E0A882;
+			remoteInfo = YWAuthorizationManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18C267BB1F47F49400E0A882 /* YWAuthorizationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YWAuthorizationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C267BF1F47F49400E0A882 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18C267C11F47F49400E0A882 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18C267C21F47F49400E0A882 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18C267C41F47F49400E0A882 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18C267C51F47F49400E0A882 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18C267C81F47F49400E0A882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18C267CA1F47F49400E0A882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18C267CD1F47F49400E0A882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18C267CF1F47F49400E0A882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C267D41F47F49400E0A882 /* YWAuthorizationManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YWAuthorizationManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C267D81F47F49400E0A882 /* YWAuthorizationManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWAuthorizationManagerTests.m; sourceTree = "<group>"; };
+		18C267DA1F47F49400E0A882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C267DF1F47F49400E0A882 /* YWAuthorizationManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YWAuthorizationManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C267E31F47F49400E0A882 /* YWAuthorizationManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWAuthorizationManagerUITests.m; sourceTree = "<group>"; };
+		18C267E51F47F49400E0A882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C267F11F47F4CA00E0A882 /* YWAuthorizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWAuthorizationManager.h; sourceTree = "<group>"; };
+		18C267F21F47F4CA00E0A882 /* YWAuthorizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWAuthorizationManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18C267B81F47F49400E0A882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C267D11F47F49400E0A882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C267DC1F47F49400E0A882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18C267B21F47F49400E0A882 = {
+			isa = PBXGroup;
+			children = (
+				18C267BD1F47F49400E0A882 /* YWAuthorizationManager */,
+				18C267D71F47F49400E0A882 /* YWAuthorizationManagerTests */,
+				18C267E21F47F49400E0A882 /* YWAuthorizationManagerUITests */,
+				18C267BC1F47F49400E0A882 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18C267BC1F47F49400E0A882 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18C267BB1F47F49400E0A882 /* YWAuthorizationManager.app */,
+				18C267D41F47F49400E0A882 /* YWAuthorizationManagerTests.xctest */,
+				18C267DF1F47F49400E0A882 /* YWAuthorizationManagerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18C267BD1F47F49400E0A882 /* YWAuthorizationManager */ = {
+			isa = PBXGroup;
+			children = (
+				18C267F11F47F4CA00E0A882 /* YWAuthorizationManager.h */,
+				18C267F21F47F4CA00E0A882 /* YWAuthorizationManager.m */,
+				18C267C11F47F49400E0A882 /* AppDelegate.h */,
+				18C267C21F47F49400E0A882 /* AppDelegate.m */,
+				18C267C41F47F49400E0A882 /* ViewController.h */,
+				18C267C51F47F49400E0A882 /* ViewController.m */,
+				18C267C71F47F49400E0A882 /* Main.storyboard */,
+				18C267CA1F47F49400E0A882 /* Assets.xcassets */,
+				18C267CC1F47F49400E0A882 /* LaunchScreen.storyboard */,
+				18C267CF1F47F49400E0A882 /* Info.plist */,
+				18C267BE1F47F49400E0A882 /* Supporting Files */,
+			);
+			path = YWAuthorizationManager;
+			sourceTree = "<group>";
+		};
+		18C267BE1F47F49400E0A882 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18C267BF1F47F49400E0A882 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18C267D71F47F49400E0A882 /* YWAuthorizationManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				18C267D81F47F49400E0A882 /* YWAuthorizationManagerTests.m */,
+				18C267DA1F47F49400E0A882 /* Info.plist */,
+			);
+			path = YWAuthorizationManagerTests;
+			sourceTree = "<group>";
+		};
+		18C267E21F47F49400E0A882 /* YWAuthorizationManagerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18C267E31F47F49400E0A882 /* YWAuthorizationManagerUITests.m */,
+				18C267E51F47F49400E0A882 /* Info.plist */,
+			);
+			path = YWAuthorizationManagerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18C267BA1F47F49400E0A882 /* YWAuthorizationManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C267E81F47F49400E0A882 /* Build configuration list for PBXNativeTarget "YWAuthorizationManager" */;
+			buildPhases = (
+				18C267B71F47F49400E0A882 /* Sources */,
+				18C267B81F47F49400E0A882 /* Frameworks */,
+				18C267B91F47F49400E0A882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YWAuthorizationManager;
+			productName = YWAuthorizationManager;
+			productReference = 18C267BB1F47F49400E0A882 /* YWAuthorizationManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18C267D31F47F49400E0A882 /* YWAuthorizationManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C267EB1F47F49400E0A882 /* Build configuration list for PBXNativeTarget "YWAuthorizationManagerTests" */;
+			buildPhases = (
+				18C267D01F47F49400E0A882 /* Sources */,
+				18C267D11F47F49400E0A882 /* Frameworks */,
+				18C267D21F47F49400E0A882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18C267D61F47F49400E0A882 /* PBXTargetDependency */,
+			);
+			name = YWAuthorizationManagerTests;
+			productName = YWAuthorizationManagerTests;
+			productReference = 18C267D41F47F49400E0A882 /* YWAuthorizationManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18C267DE1F47F49400E0A882 /* YWAuthorizationManagerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C267EE1F47F49400E0A882 /* Build configuration list for PBXNativeTarget "YWAuthorizationManagerUITests" */;
+			buildPhases = (
+				18C267DB1F47F49400E0A882 /* Sources */,
+				18C267DC1F47F49400E0A882 /* Frameworks */,
+				18C267DD1F47F49400E0A882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18C267E11F47F49400E0A882 /* PBXTargetDependency */,
+			);
+			name = YWAuthorizationManagerUITests;
+			productName = YWAuthorizationManagerUITests;
+			productReference = 18C267DF1F47F49400E0A882 /* YWAuthorizationManagerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18C267B31F47F49400E0A882 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = zjbojin;
+				TargetAttributes = {
+					18C267BA1F47F49400E0A882 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = V4R3BFY32R;
+						ProvisioningStyle = Automatic;
+					};
+					18C267D31F47F49400E0A882 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 18C267BA1F47F49400E0A882;
+					};
+					18C267DE1F47F49400E0A882 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 18C267BA1F47F49400E0A882;
+					};
+				};
+			};
+			buildConfigurationList = 18C267B61F47F49400E0A882 /* Build configuration list for PBXProject "YWAuthorizationManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18C267B21F47F49400E0A882;
+			productRefGroup = 18C267BC1F47F49400E0A882 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18C267BA1F47F49400E0A882 /* YWAuthorizationManager */,
+				18C267D31F47F49400E0A882 /* YWAuthorizationManagerTests */,
+				18C267DE1F47F49400E0A882 /* YWAuthorizationManagerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18C267B91F47F49400E0A882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C267CE1F47F49400E0A882 /* LaunchScreen.storyboard in Resources */,
+				18C267CB1F47F49400E0A882 /* Assets.xcassets in Resources */,
+				18C267C91F47F49400E0A882 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C267D21F47F49400E0A882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C267DD1F47F49400E0A882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18C267B71F47F49400E0A882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C267C61F47F49400E0A882 /* ViewController.m in Sources */,
+				18C267C31F47F49400E0A882 /* AppDelegate.m in Sources */,
+				18C267C01F47F49400E0A882 /* main.m in Sources */,
+				18C267F31F47F4CA00E0A882 /* YWAuthorizationManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C267D01F47F49400E0A882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C267D91F47F49400E0A882 /* YWAuthorizationManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C267DB1F47F49400E0A882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C267E41F47F49400E0A882 /* YWAuthorizationManagerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18C267D61F47F49400E0A882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18C267BA1F47F49400E0A882 /* YWAuthorizationManager */;
+			targetProxy = 18C267D51F47F49400E0A882 /* PBXContainerItemProxy */;
+		};
+		18C267E11F47F49400E0A882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18C267BA1F47F49400E0A882 /* YWAuthorizationManager */;
+			targetProxy = 18C267E01F47F49400E0A882 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18C267C71F47F49400E0A882 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18C267C81F47F49400E0A882 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18C267CC1F47F49400E0A882 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18C267CD1F47F49400E0A882 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18C267E61F47F49400E0A882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18C267E71F47F49400E0A882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18C267E91F47F49400E0A882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V4R3BFY32R;
+				INFOPLIST_FILE = YWAuthorizationManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunshine.YWAuthorizationManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18C267EA1F47F49400E0A882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V4R3BFY32R;
+				INFOPLIST_FILE = YWAuthorizationManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunshine.YWAuthorizationManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18C267EC1F47F49400E0A882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YWAuthorizationManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjbojin.YWAuthorizationManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YWAuthorizationManager.app/YWAuthorizationManager";
+			};
+			name = Debug;
+		};
+		18C267ED1F47F49400E0A882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YWAuthorizationManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjbojin.YWAuthorizationManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YWAuthorizationManager.app/YWAuthorizationManager";
+			};
+			name = Release;
+		};
+		18C267EF1F47F49400E0A882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YWAuthorizationManagerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjbojin.YWAuthorizationManagerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YWAuthorizationManager;
+			};
+			name = Debug;
+		};
+		18C267F01F47F49400E0A882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YWAuthorizationManagerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjbojin.YWAuthorizationManagerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YWAuthorizationManager;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18C267B61F47F49400E0A882 /* Build configuration list for PBXProject "YWAuthorizationManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C267E61F47F49400E0A882 /* Debug */,
+				18C267E71F47F49400E0A882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18C267E81F47F49400E0A882 /* Build configuration list for PBXNativeTarget "YWAuthorizationManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C267E91F47F49400E0A882 /* Debug */,
+				18C267EA1F47F49400E0A882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18C267EB1F47F49400E0A882 /* Build configuration list for PBXNativeTarget "YWAuthorizationManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C267EC1F47F49400E0A882 /* Debug */,
+				18C267ED1F47F49400E0A882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		18C267EE1F47F49400E0A882 /* Build configuration list for PBXNativeTarget "YWAuthorizationManagerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C267EF1F47F49400E0A882 /* Debug */,
+				18C267F01F47F49400E0A882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18C267B31F47F49400E0A882 /* Project object */;
+}
