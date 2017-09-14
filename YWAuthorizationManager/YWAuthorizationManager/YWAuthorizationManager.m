@@ -16,6 +16,7 @@
 @property(nonatomic,copy)void(^locationAlawysUnauthorizedHandel)();
 @property(nonatomic,copy)void(^locationWhenInUseAuthorizedHandel)();
 @property(nonatomic,copy)void(^locationWhenInUseUnauthorizedHandel)();
+@property(nonatomic,assign)BOOL isRequestWhenInUse;
 
 @end
 
@@ -48,16 +49,16 @@
 #pragma mark - Events
 /**
  请求权限统一入口
-
+ 
  @param currentController 当前控制器
  @param authorizationType 权限类型
  @param authorizedHandel 授权后的回调
  @param unauthorizedHandel 未授权后的回调
  */
 - (void)YW_requestAuthorizationWithCurrentController:(UIViewController *)currentController
-                                  authorizationType:(YWAuthorizationType)authorizationType
-                                   authorizedHandel:(void(^)())authorizedHandel
-                                 unauthorizedHandel:(void(^)())unauthorizedHandel{
+                                   authorizationType:(YWAuthorizationType)authorizationType
+                                    authorizedHandel:(void(^)())authorizedHandel
+                                  unauthorizedHandel:(void(^)())unauthorizedHandel{
     
     switch (authorizationType) {
         case YWAuthorizationTypePhotoLibrary:
@@ -75,7 +76,7 @@
         case YWAuthorizationTypeLocationAlways:
             [self requestLocationAlwaysWithCurrentController:currentController authorizedHandel:authorizedHandel unauthorizedHandel:unauthorizedHandel];
             break;
-        
+            
         case YWAuthorizationTypeLocationWhenInUse:
             [self requestLocationWhenInUseWithCurrentController:currentController authorizedHandel:authorizedHandel unauthorizedHandel:unauthorizedHandel];
             break;
@@ -98,7 +99,13 @@
                     authorizedHandel ? authorizedHandel() : nil;
                 });
                 
-            } 
+            } else {            //用户第一次拒绝访问相册权限
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    unauthorizedHandel ? unauthorizedHandel() : nil;
+                });
+                
+            }
             
         }];
     } else if (status == PHAuthorizationStatusAuthorized){  //用户已经允许访问相册权限
@@ -154,6 +161,10 @@
                 if (granted) {    //用户第一次同意了访问相机权限
                     dispatch_async(dispatch_get_main_queue(), ^{
                         authorizedHandel ? authorizedHandel() : nil;
+                    });
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{    //第一次拒绝
+                        unauthorizedHandel ? unauthorizedHandel() : nil;
                     });
                 }
                 
@@ -220,7 +231,12 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         authorizedHandel ? authorizedHandel() : nil;
                     });
+                }else {
+                    dispatch_async(dispatch_get_main_queue(), ^{    //第一次拒绝
+                        unauthorizedHandel ? unauthorizedHandel() : nil;
+                    });
                 }
+                
                 
             }];
             
@@ -259,7 +275,7 @@
             }
             
         }
-
+        
         
     } else {
         
@@ -272,22 +288,21 @@
 - (void)requestLocationWhenInUseWithCurrentController:(UIViewController *)currentController
                                      authorizedHandel:(void(^)())authorizedHandel
                                    unauthorizedHandel:(void(^)())unauthorizedHandel{
-   //地理位置管理对象
-    if (!self.locationManager) {
-        self.locationManager = [[CLLocationManager alloc]init];
-        self.locationManager.delegate = self;
-    }
+    //地理位置管理对象,不能判断为空创建,因为不每次创建会导致权限未改变时不调用block
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    
+    self.locationWhenInUseAuthorizedHandel = authorizedHandel;
+    self.locationWhenInUseUnauthorizedHandel = unauthorizedHandel;
+    self.isRequestWhenInUse = YES;
     
     //判断授权状态
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     if (status == kCLAuthorizationStatusNotDetermined) {    //用户还没决定
         
         [self.locationManager requestWhenInUseAuthorization];
-        self.locationWhenInUseAuthorizedHandel = authorizedHandel;
         
     } else if (status == kCLAuthorizationStatusDenied) {   //用户拒绝访问定位服务
-        
-        unauthorizedHandel ? unauthorizedHandel() : nil;
         
         if (self.isNeedReminder) {
             switch (self.authorizationReminderType) {
@@ -304,17 +319,8 @@
                     break;
             }
         }
-    } else if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {    //允许访问定位服务
+    }  else if (status == kCLAuthorizationStatusRestricted) {
         
-        authorizedHandel ? authorizedHandel() : nil;
-        
-    } else if (status == kCLAuthorizationStatusAuthorizedAlways) {   //允许访问定位服务
-        
-        authorizedHandel ? authorizedHandel() : nil;
-        
-    } else if (status == kCLAuthorizationStatusRestricted) {   
-        
-        unauthorizedHandel ? unauthorizedHandel() : nil;
         
         if (self.isNeedReminder) {
             [self presentAlertControllerWithMessage:@"由于系统原因, 无法开启定位服务" currentController:currentController];
@@ -326,25 +332,25 @@
 
 //始终使用定位权限
 - (void)requestLocationAlwaysWithCurrentController:(UIViewController *)currentController
-                                     authorizedHandel:(void(^)())authorizedHandel
+                                  authorizedHandel:(void(^)())authorizedHandel
                                 unauthorizedHandel:(void(^)())unauthorizedHandel{
     
-    //地理位置管理对象
-    if (!self.locationManager) {
-        self.locationManager = [[CLLocationManager alloc]init];
-        self.locationManager.delegate = self;
-    }
+    //地理位置管理对象,不能判断为空创建,因为不每次创建会导致权限未改变时不调用block
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    
+    //由于定位权限的开启关闭不会重启app,所以需要实时获取权限状态
+    self.locationAlwaysAuthorizedHandel = authorizedHandel;
+    self.locationAlawysUnauthorizedHandel = unauthorizedHandel;
+    self.isRequestWhenInUse = NO;
     
     //判断授权状态
     CLAuthorizationStatus states = [CLLocationManager authorizationStatus];
     if (states == kCLAuthorizationStatusNotDetermined) {   //用户还没有决定
         
         [self.locationManager requestAlwaysAuthorization];
-        self.locationAlwaysAuthorizedHandel = authorizedHandel;
         
     } else if (states == kCLAuthorizationStatusDenied || states == kCLAuthorizationStatusAuthorizedWhenInUse) {   //用户拒绝访问后台定位服务
-        
-        unauthorizedHandel ? unauthorizedHandel() : nil;
         
         if (self.isNeedReminder) {
             switch (self.authorizationReminderType) {
@@ -361,13 +367,7 @@
                     break;
             }
         }
-    } else if (states == kCLAuthorizationStatusAuthorizedAlways) {    //允许访问后台定位
-        
-        authorizedHandel ? authorizedHandel() : nil;
-        
-    } else if (states == kCLAuthorizationStatusRestricted) {
-        
-        unauthorizedHandel ? unauthorizedHandel() : nil;
+    }  else if (states == kCLAuthorizationStatusRestricted) {
         
         if (self.isNeedReminder) {
             [self presentAlertControllerWithMessage:@"由于系统原因, 无法开启后台定位服务" currentController:currentController];
@@ -380,7 +380,7 @@
 #pragma - mark Private Methods
 /**
  弹窗提示(只有一个确定按钮)
-
+ 
  @param message 提示消息
  */
 - (void)presentAlertControllerWithMessage:(NSString *)message
@@ -394,13 +394,13 @@
 
 /**
  弹窗提示(取消和设置按钮)
-
+ 
  @param title 提示信息
  @param message 提示描述
  */
 - (void)presentAlertControllerWithTitle:(NSString *)title
-                              message:(NSString *)message
-                        currentController:(UIViewController *)currentController{
+                                message:(NSString *)message
+                      currentController:(UIViewController *)currentController{
     
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -408,13 +408,13 @@
         if (![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]]) return ;
         
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0) {
-           
+            
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
             
         } else {
             
             [[UIApplication  sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-    
+            
         }
         
     }];
@@ -431,15 +431,32 @@
     
     switch (status) {
         case kCLAuthorizationStatusDenied:
-            NSLog(@"kCLAuthorizationStatusDenied");
+            
+            if (self.isRequestWhenInUse) {
+                self.locationWhenInUseUnauthorizedHandel ? self.locationWhenInUseUnauthorizedHandel() : nil;
+            } else {
+                self.locationAlawysUnauthorizedHandel ? self.locationAlawysUnauthorizedHandel() : nil;
+            }
             break;
-        
+            
         case kCLAuthorizationStatusAuthorizedWhenInUse:
-            self.locationWhenInUseAuthorizedHandel ? self.locationWhenInUseAuthorizedHandel() : nil;
+            //后台定位权限未授权
+            if (self.isRequestWhenInUse) {
+                
+                self.locationWhenInUseAuthorizedHandel ? self.locationWhenInUseAuthorizedHandel() : nil;
+            } else {
+                self.locationAlawysUnauthorizedHandel ? self.locationAlawysUnauthorizedHandel() : nil;
+            }
             break;
             
         case kCLAuthorizationStatusAuthorizedAlways:
-            self.locationAlwaysAuthorizedHandel ? self.locationAlwaysAuthorizedHandel() : nil;
+            //始终允许代表使用应用期间的权限也是授权的
+            if (self.isRequestWhenInUse) {
+                self.locationWhenInUseAuthorizedHandel ? self.locationWhenInUseAuthorizedHandel() : nil;
+            } else {
+                self.locationAlwaysAuthorizedHandel ? self.locationAlwaysAuthorizedHandel() : nil;
+            }
+            
             break;
             
         case kCLAuthorizationStatusNotDetermined:
@@ -447,7 +464,11 @@
             break;
             
         case kCLAuthorizationStatusRestricted:
-            NSLog(@"kCLAuthorizationStatusRestricted");
+            if (self.isRequestWhenInUse) {
+                self.locationWhenInUseUnauthorizedHandel ? self.locationWhenInUseUnauthorizedHandel() : nil;
+            } else {
+                self.locationAlawysUnauthorizedHandel ? self.locationAlawysUnauthorizedHandel() : nil;
+            }
             break;
     }
     

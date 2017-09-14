@@ -6,6 +6,8 @@
 //  Copyright © 2017年 zjbojin. All rights reserved.
 //
 
+/*    注意：定位服务权限的开启关闭不会使app重启,其他权限的开启关闭会导致app重启   */
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -54,8 +56,8 @@ typedef NS_ENUM(NSUInteger, YWAuthorizationReminderType) {
  @param unauthorizedHandel 未授权后的回调
  */
 - (void)YW_requestAuthorizationWithCurrentController:(UIViewController *)currentController
-                                  authorizationType:(YWAuthorizationType)authorizationType
-                                   authorizedHandel:(void(^)())authorizedHandel
-                                 unauthorizedHandel:(void(^)())unauthorizedHandel;
+                                   authorizationType:(YWAuthorizationType)authorizationType
+                                    authorizedHandel:(void(^)())authorizedHandel
+                                  unauthorizedHandel:(void(^)())unauthorizedHandel;
 
 @end
